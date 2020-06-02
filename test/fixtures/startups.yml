@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  innovation: MyText
+  product: false
+  location: MyString
+
+two:
+  company: MyString
+  innovation: MyText
+  product: false
+  location: MyString
