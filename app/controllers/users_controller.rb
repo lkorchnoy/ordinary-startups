@@ -21,9 +21,9 @@ end
 def create 
     @user = User.new(user_params)
     if @user.save 
-        redirect_to @user 
+        redirect_to @user #root_path 
     else 
-        redirect_to login_path
+        render :new 
     end
 end
 
