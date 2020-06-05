@@ -1,15 +1,13 @@
 class UsersController < ApplicationController
-before_action :require_login 
-skip_before_action :require_login, only: [:new, :create]
-skip_before_action :find_user, only: [:index, :new, :create]     
+before_action :require_login, except: [:new, :create, :home]
+
+   
 def index
     @users = User.all 
 end
 
 def home 
-    if session[:user_id]
-        @user = User.find(session[:user_id])
-    end
+end
 
 def new
     @user = User.new 
