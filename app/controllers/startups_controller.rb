@@ -13,12 +13,15 @@ def show
     if session[:user_id].present?
     @startup = Startup.find_by(id: params[:id])
     @category = Category.new 
+    else  
+        redirect_to root_path 
+    end
 end 
 
 def create
     @startup = Startup.new(startup_params)
     if @startup.save
-    redirect_to startup_url(@startup)
+    redirect_to @startup
 else   
     @startups = Startup.all 
     render :index 

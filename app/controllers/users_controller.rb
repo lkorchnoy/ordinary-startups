@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :require_login 
 skip_before_action :require_login, only: [:new, :create]
 skip_before_action :find_user, only: [:index, :new, :create]     
 def index
@@ -21,9 +22,10 @@ end
 def create 
     @user = User.new(user_params)
     if @user.save 
+        session[:user_id] = @user.id 
         redirect_to @user #root_path 
     else 
-        render :new 
+        render 'users/new' 
     end
 end
 

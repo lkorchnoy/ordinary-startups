@@ -1,20 +1,22 @@
 class ApplicationController < ActionController::Base
-before_action :require_login 
-before_action :find_user
+
+def current_user
+    session[:user_id]
+end
+
+def logged_in?
+    !!current_user 
+end 
 
 
-
-
-
-
-
-private 
 def require_login 
     unless logged_in?
-        redirect_to new_login_url 
+        redirect_to login_path
     end
 end
 
-def find_user 
-    @user = User.find_by(id: params[:id])
-end
+#def current_user  
+    #@current_user ||= User.find(session[:user_id]) if session[:user_id]
+#end
+
+end 
