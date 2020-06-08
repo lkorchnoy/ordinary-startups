@@ -4,25 +4,32 @@ class SessionsController < ApplicationController
 
      def fb_create 
         @user = User.find_or_create_by(uid: auth['info']['uid']) do |u|
+            u.uid = auth['info']['uid']
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['info']['password']
             u.save 
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
+        end
      end
 
      def github_create 
-            @user = User.find_or_create_by(uid: auth['info']['uid']) do |u|
+        
+        @user = User.find_or_create_by(uid: auth['info']['uid']) do |u|
+            raise request.env["omniauth.auth"].inspect
+            u.uid = auth['info']['uid']
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['info']['password']
             u.save
+            session[:user_id] = @user.id 
             #@user = User.find_or_create_by(username: auth['info']['username'])
             #@user.password = 'SecureRandom.hex'
             #@user.save 
-            session[:user_id] = @user.id 
+            
             redirect_to user_path(@user)
+        end 
      end
 
 

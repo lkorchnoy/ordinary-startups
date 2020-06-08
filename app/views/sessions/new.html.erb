@@ -1,7 +1,13 @@
 <h1>Login</h1>
 <%#= form_tag sessions_path do %>
 <%= form_for :sessions, url: '/login' do |f| %>
-<label> Name: </label><br>
-<%= f.text_field :name %><br>
+<label> Email: </label><br>
+<%= f.text_field :email %><br>
+<label> Password: </label><br>
+<%= f.text_field :password %>
+
 
 <% end %>
+
+<%= link_to "Log In with Facebook", '/auth/facebook' %>
+<%= link_to "Log In with GitHub", '/auth/github' %>
