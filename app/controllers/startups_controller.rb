@@ -28,6 +28,21 @@ else
     end
 end 
 
+def edit
+    @startup = Startup.find_by(id: params[:id])
+end
+
+def update 
+    @startup = Startup.find_by(id: params[:id])
+    @startup.update(startup_params)
+    if @startup.save 
+        redirect_to @startup  
+    else
+        render :edit
+    end
+end
+
+
 private 
 def startup_params
     params.require(:startup).permit(:company, :innovation, :product, :location)
