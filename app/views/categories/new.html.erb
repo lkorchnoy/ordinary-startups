@@ -1,8 +1,22 @@
 <%= form_for @category do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.fields_for :startup do |f| %>
+<%= f.text_field :name %><br>
 
+<%= f.fields_for :startups do |s| %>
+<%= s.label :company %>
+<%= s.text_field :company %><br>
+
+<%= s.label :innovation %>
+<%= s.text_field :innovation %><br>
+
+<%= s.label :product %>
+<%= s.text_field :product %><br>
+
+<%= s.label :location %>
+<%= s.text_field :location %><br>
+<% end %>
 
 
 <%= f.submit %>
+
+<% end %>
