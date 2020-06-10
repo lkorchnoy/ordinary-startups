@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
         @categories = Category.all
     else  
         redirect_to root_path 
+       end
     end
 
     def new
@@ -58,3 +59,4 @@ class CategoriesController < ApplicationController
     end
 
 end
+

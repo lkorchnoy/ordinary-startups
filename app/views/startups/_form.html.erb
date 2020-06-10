@@ -3,6 +3,7 @@
 <%= form_for @startup do |f| %>
 <%= f.label :company %>
 <%= f.text_field :company %>
+
 <%= f.label :innovation %>
 <%= f.text_field :innovation %>
 <%= f.label :product %>
@@ -11,6 +12,7 @@
 <%= f.text_field :location %>
 <%= f.hidden_field :category_id, :value => @category.id %>
 <%= f.hidden_field :user_id, :value => @user.id %>
+
 <br />
 
 <%= f.submit 'Submit'%>

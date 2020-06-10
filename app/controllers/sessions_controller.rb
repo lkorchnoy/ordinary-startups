@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
             #@user.password = 'SecureRandom.hex'
             #@user.save 
             
-            redirect_to user_path(@user)
+            redirect_to startups_path #user_path(@user)
         
      end
 
