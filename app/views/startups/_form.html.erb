@@ -1,8 +1,6 @@
 <h1>Enter Your Startup</h1>
 
 <%= form_for @startup do |f| %>
-<%= category_select(@startup) %>
-<%#= category_id_field(@startup) %>
 <br>
 
 <%= f.label :company %>
@@ -16,7 +14,12 @@
 <%= f.text_field :location %>
 <%= f.hidden_field :category_id %>
 <%= f.hidden_field :user_id %>
+<%= f.select :name, options_for_names, :prompt => "Select One" %>   
+<%= f.fields_for :categories do |cat| %>
+   <%= cat.label :name %>
+   <%= cat.text_field :name %>
 
+<% end %>
 <br />
 
 <%= f.submit 'Submit'%>

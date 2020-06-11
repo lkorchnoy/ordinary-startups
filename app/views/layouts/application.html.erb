@@ -14,7 +14,7 @@
   <div class="navbar-class">
   <div class="container">
   
-  
+  <% if current_user %>
   <ul class="nav navbar-nav">
   <li class="active"><a href="/">Home</a></li>
   <li><%= link_to "Sign Up", controller: "users", action: "new" %></li>
@@ -22,7 +22,8 @@
   <li><%= link_to "New Startups", new_startup_path %></li>
   <li><%= link_to "Startups by Categories", categories_path %></li>
   <li><%= link_to "Create a New Category", new_category_path %></li>
-  
+  <li><%= link_to "Log Out", logout_path, method: :post %>
+  <% end %>
     </ul>
     
    </div>

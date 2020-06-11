@@ -17,6 +17,7 @@ def index
         @startups = @category.startups 
         end 
     else  
+        @startups = Startup.all   
         render :index   
     end
 end
@@ -26,7 +27,7 @@ def show
         @category = Category.find_by(id: params[:category_id])
         @startup = @category.startups.find_by(id: params[:id])
         if @startup.nil? 
-            redirect_to category_startups_path(@category), alert: "Startup not found"
+            redirect_to category_startup_path(@category), alert: "Startup not found"
         end
     else 
     @startup = Startup.find_by(id: params[:id])
