@@ -4,7 +4,7 @@ def new
     if params[:category_id] && !Category.exists?(params[:category_id])
         redirect_to categories_path, alert: "Category not found."
     else 
-    @startup = Startup.new(category_id: params[:artist_id])
+    @startup = Startup.new(category_id: params[:category_id])
     end  
 end
 
@@ -17,7 +17,7 @@ def index
         @startups = @category.startups 
         end 
     else  
-        @songs = Song.all 
+        render :index   
     end
 end
 
