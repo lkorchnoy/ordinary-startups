@@ -1,6 +1,10 @@
 <h1>Enter Your Startup</h1>
 
 <%= form_for @startup do |f| %>
+<%= category_select(@startup) %>
+<%#= category_id_field(@startup) %>
+<br>
+
 <%= f.label :company %>
 <%= f.text_field :company %>
 
@@ -10,8 +14,8 @@
 <%= f.check_box :product %>
 <%= f.label :location %>
 <%= f.text_field :location %>
-<%= f.hidden_field :category_id, :value => @category.id %>
-<%= f.hidden_field :user_id, :value => @user.id %>
+<%= f.hidden_field :category_id %>
+<%= f.hidden_field :user_id %>
 
 <br />
 

@@ -1,12 +1,24 @@
 class StartupsController < ApplicationController
 
+def new
+    if params[:category_id] && !Category.exists?(params[:category_id])
+        redirect_to categories_path, alert: "Category not found."
+    else 
+    @startup = Startup.new(category_id: params[:artist_id])
+    end  
+end
+
 def index 
-    if session[:user_id].present?
-        @startups = Startup.all 
+    if params[:category_id]
+        @category = Category.find_by(id: params[:category_id])
+        if @category.nil?
+            redirect_to categories_path, alert: "Category not found"
+        else
+        @startups = @category.startups 
+        end 
     else  
-        redirect_to root_path 
+        @songs = Song.all 
     end
-    
 end
 
 def show 

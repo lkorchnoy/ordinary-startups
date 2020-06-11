@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
     def index
-        if session[:user_id].present?
+        if session[:user_id]
         @categories = Category.all
+        @category.startups = Startup.find_or_create_by(id: params[:id])
     else  
         redirect_to root_path 
        end
@@ -13,7 +14,7 @@ class CategoriesController < ApplicationController
     end
     
     def show
-        if session[:user_id].present?
+        if session[:user_id]
             @category = Category.find_by(id: params[:id])
             else  
                 redirect_to root_path 

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :categories
   resources :users
-  resources :startups do 
-    resources :categories 
+  resources :startups 
+  resources :categories do 
+    resources :startups 
   end
 
   root 'users#home'
