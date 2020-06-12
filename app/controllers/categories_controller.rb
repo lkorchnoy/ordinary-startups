@@ -23,24 +23,11 @@ class CategoriesController < ApplicationController
 
     def create
         @category = Category.new(category_params)
+        #@category.user = current_user 
         if @category.save
-            redirect_to @startup
+            redirect_to @category 
         else 
             render :new
-        end
-    end
-
-    def edit
-        @category = Category.find_by(id: params[:id])
-    end
-
-    def update
-           @category = Category.find_by(id: params[:id])
-           @category.update(category_params)
-        if @category.save 
-           redirect_to @startup  
-        else
-        render :edit
         end
     end
 
