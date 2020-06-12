@@ -2,5 +2,11 @@
 <%#= form_tag sessions_path do %>
 <%= render 'form' %>
 
+<% if @user && @user.errors.any? %>
+    <% @user.errors.full_messages.each do |m| %>
+        <p style="color: red;"><%= m %></p>
+    <% end %>
+<% end %>
+
 <%= link_to "Log In with Facebook", '/auth/facebook' %>
 <%= link_to "Log In with GitHub", '/auth/github' %>

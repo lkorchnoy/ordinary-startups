@@ -1,1 +1,10 @@
 <%= render 'form' %>
+
+<% if @startup && @startup.errors.any? %>
+<ul>
+<% @startup.errors.full_messages.each do |m| %>
+<li><%= m %></li>
+<% end %>
+</ul>
+<% end %>
+

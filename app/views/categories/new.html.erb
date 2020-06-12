@@ -23,3 +23,9 @@
 <%= f.submit %>
 
 <% end %>
+
+<% if @category && @category.errors.any? %>
+    <% @category.errors.full_messages.each do |m| %>
+        <p style="color: red;"><%= m %></p>
+    <% end %>
+<% end %>
