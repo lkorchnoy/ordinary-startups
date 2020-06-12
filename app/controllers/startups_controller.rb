@@ -36,6 +36,7 @@ end
 
 def create
     @startup = Startup.new(startup_params)
+    @startup.user = current_user 
     if @startup.save
     redirect_to @startup
 else   
@@ -76,6 +77,6 @@ end
 
 private 
 def startup_params
-    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id)
+    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id, :category => [])
 end
 end

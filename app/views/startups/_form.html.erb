@@ -5,8 +5,6 @@
 <br>
 
 <%= f.label :company %>
-
-
 <%= f.text_field :company %>
 
 <%= f.label :innovation %>
@@ -15,15 +13,9 @@
 <%= f.check_box :product %>
 <%= f.label :location %>
 <%= f.text_field :location %>
-<%#= f.hidden_field :category_id %>
+
 <%= f.hidden_field :user_id %>
-<%= f.select :name, options_for_names, :prompt => "Select One" %>   
-<%= f.fields_for :categories do |cat| %>
-   <%= cat.label :name %>
-   <%= cat.text_field :name %>
-
-<% end %>
+ 
 <br />
-
 <%= f.submit 'Submit'%>
 <% end %>
