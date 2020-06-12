@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
     def index
-        if session[:user_id]
+        if current_user && params[:search]
+            @categories = Category.search(params[:search])
+
+        elsif session[:user_id]
         @categories = Category.all
-      
+        
     else  
         redirect_to root_path 
        end
@@ -34,16 +37,7 @@ class CategoriesController < ApplicationController
     
     private 
     def category_params
-        params.require(:category).permit(:name,
-        startups_attributes: [
-            :company,
-            :innovation,
-            :product,
-            :location,
-            :category_id,
-            :user_id
-        ]
-    )
+        params.require(:category).permit(:name, :search)
     end
 
 end

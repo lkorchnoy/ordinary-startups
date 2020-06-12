@@ -6,5 +6,5 @@
 
 
 <% if current_user %>
-<%= link_to "delete startup", controller: "startups", action: "destroy" %>
+<%= link_to "delete startup", @startup, method: :delete %>
 <% end %>

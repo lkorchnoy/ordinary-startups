@@ -2,24 +2,6 @@
 <%= form_for @category do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br />
-
-<%= f.select :name, options_for_names, :prompt => "Select One" %>
-
-<%= f.fields_for :startups do |s| %>
-   <%= s.label :company %>
-   <%= s.text_field :company %><br>
-
-   <%= s.label :innovation %>
-   <%= s.text_field :innovation %><br>
-
-   <%= s.label :product %>
-   <%= s.check_box :product %><br>
-
-   <%= s.label :location %>
-   <%= s.text_field :location %><br>
-<% end %>
-
-
 <%= f.submit %>
 
 <% end %>

@@ -17,7 +17,7 @@ def index
         @startups = @category.startups 
         end 
     else  
-        @startups = Startup.all.disrupt_startups 
+        @startups = Startup.all
         render :index   
     end
 end
@@ -37,6 +37,7 @@ end
 def create
     @startup = Startup.new(startup_params)
     @startup.user = current_user 
+    
     if @startup.save
     redirect_to @startup
 else   

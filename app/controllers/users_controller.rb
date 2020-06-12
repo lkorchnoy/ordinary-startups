@@ -29,6 +29,7 @@ end
 def destroy 
     @user = User.find_by(id: params[:id])
     @user.destroy 
+    session.clear
     flash[:notice] = "User deleted."
     redirect_to users_path
 end
