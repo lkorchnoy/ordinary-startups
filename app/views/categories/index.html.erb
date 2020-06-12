@@ -4,7 +4,7 @@
 <li><%= link_to category.name, category %></li>
 <ul>
 <% category.startups.each do |startup| %>
-<li><%= startup.company %> <%= startup.innovation %>, <%= startup.product %>, <%= startup.location %></li>
+<li><%= startup.company %>, <%= startup.innovation %>, <%= startup.product %>, <%= startup.location %></li>
 <% end %>
 
 </ul>

@@ -3,3 +3,8 @@
 <p><%= @startup.innovation %></p>
 <p><%= @startup.product %></p>
 <p><%= @startup.location %></p>
+
+
+<% if current_user %>
+<%= link_to "delete startup", controller: "startups", action: "destroy" %>
+<% end %>

@@ -1,3 +1,5 @@
 <h1>Welcome</h1> 
-
-<%= button_to "Logout", controller: "sessions", action: "destroy" %>
+<% if current_user %>
+<%= link_to "delete account", controller: "users", action: "destroy" %>
+<% end %>
+<%#= button_to "Logout", controller: "sessions", action: "destroy" %>

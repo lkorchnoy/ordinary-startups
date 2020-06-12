@@ -14,7 +14,6 @@ def new
 end
 
 def show 
-    
 end
 
 def create 
@@ -24,20 +23,6 @@ def create
         redirect_to @user #root_path 
     else 
         render 'users/new' 
-    end
-end
-
-def edit
-    @user = User.find_by(id: params[:id])
-end
-
-def update
-    @user = User.find_by(id: params[:id])
-    @user.update(user_params)
-    if @user.save 
-        redirect_to @user 
-    else
-        render :edit
     end
 end
 
