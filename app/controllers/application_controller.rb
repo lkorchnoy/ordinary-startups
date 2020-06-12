@@ -18,6 +18,10 @@ end
 def current_user  
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
 end
+
+def set_category 
+    @category = Category.find_by(id: params[:category_id])
+end
  
 
 end 
