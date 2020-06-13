@@ -1,7 +1,7 @@
 <h3><%= @user.name %></h3>
 <ul>
-<% @startups.each do |startup| %>
-<li><%= link_to "Innovative Startups", startups_path %></li>
+<% @user.startups.each do |startup| %>
+<li><%= link_to user.startup.company, startup_path(startup) %></li>
 <%#=startup.id%><%#= startup.company %>>
 <% end %>
 </ul>
