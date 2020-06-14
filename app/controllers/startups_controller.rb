@@ -1,5 +1,5 @@
 class StartupsController < ApplicationController
-  before_action :set_category, except: [:new, :create, :update, :destroy]
+  
 def new
     if params[:category_id] && !Category.exists?(params[:category_id])
         redirect_to categories_path, alert: "Category not found."
@@ -9,7 +9,8 @@ def new
 end
 
 def index 
-    if current_user && params[:category_id]
+    if params[:category_id]
+        @category = Category.find_by(id: params[:category_id])
         if @category.nil?
             redirect_to categories_path, alert: "Category not found"
         else
@@ -22,7 +23,8 @@ def index
 end
 
 def show 
-    if current_user && params[:category_id]
+    if params[:category_id]
+        @category = Category.find_by(id: params[:category_id])
         @startup = @category.startups.find_by(id: params[:id])
         if @startup.nil? 
             redirect_to category_startup_path(@category), alert: "Startup not found"
@@ -34,8 +36,6 @@ end
 
 def create
     @startup = Startup.new(startup_params)
-    @startup.user = current_user 
-    
     if @startup.save
     redirect_to @startup
 else   
@@ -44,7 +44,8 @@ else
 end 
 
 def edit
-    if current_user && params[:category_id]
+    if params[:category_id]
+        @category = Category.find_by(id: params[:category_id])
         if @category.nil?
             redirect_to categories_path, alert: "Category not found"
         else  

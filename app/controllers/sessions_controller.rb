@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
             
         if @user && @user.authenticate(params[:sessions][:password])
             session[:user_id] = @user.id 
-            redirect_to user_path(@user)
+            redirect_to startups_path 
             else 
                 render :new
             end

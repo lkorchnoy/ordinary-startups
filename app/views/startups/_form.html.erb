@@ -15,11 +15,7 @@
 <%= f.text_field :location %>
 
 <%= f.hidden_field :user_id %>
-<%= f.fields_for :categories do |c| %>
-  <%= c.label :name %>
-  <%= c.text_field :name %>
-  <% end %>
- 
+
 <br />
 <%= f.submit 'Submit'%>
 <% end %>

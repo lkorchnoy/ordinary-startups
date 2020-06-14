@@ -7,7 +7,7 @@
 <% end %>
 
 <% @categories.each do |category| %>
-<li><%= link_to category.name, category %></li>
+<li><%= link_to category.name, category_path(category) %></li>
 <ul>
 <% category.startups.each do |startup| %>
 <li><%= startup.company %>, <%= startup.innovation %>, <%= startup.product %>, <%= startup.location %></li>
