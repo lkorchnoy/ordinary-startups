@@ -13,11 +13,10 @@ class CategoriesController < ApplicationController
 
     def new
         @category = Category.new 
-        @category.startups.build
     end
     
     def show
-        if session[:user_id]
+        if current_user  
             @category = Category.find_by(id: params[:id])
             else  
                 redirect_to root_path 
@@ -25,8 +24,7 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        @category = Category.new(category_params)
-        #@category.user = current_user 
+            @category = Category.new(category_params)
         if @category.save
             redirect_to @category 
         else 
@@ -37,7 +35,7 @@ class CategoriesController < ApplicationController
     
     private 
     def category_params
-        params.require(:category).permit(:name, :search)
+        params.require(:category).permit(:name)
     end
 
 end

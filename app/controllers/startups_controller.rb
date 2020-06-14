@@ -9,8 +9,7 @@ def new
 end
 
 def index 
-    if params[:category_id]
-        #@category = Category.find_by(id: params[:category_id])
+    if current_user && params[:category_id]
         if @category.nil?
             redirect_to categories_path, alert: "Category not found"
         else
@@ -23,8 +22,7 @@ def index
 end
 
 def show 
-    if params[:category_id]
-        #@category = Category.find_by(id: params[:category_id])
+    if current_user && params[:category_id]
         @startup = @category.startups.find_by(id: params[:id])
         if @startup.nil? 
             redirect_to category_startup_path(@category), alert: "Startup not found"
@@ -46,13 +44,12 @@ else
 end 
 
 def edit
-    if params[:category_id]
-        #@category = Category.find_by(id: params[:category_id])
+    if current_user && params[:category_id]
         if @category.nil?
             redirect_to categories_path, alert: "Category not found"
         else  
     @startup = @category.startups.find_by(id: params[:id])
-    redirect_to category_startups_path(@category), alert: "Startup not found." if @startup.nil?
+    redirect_to category_startup_path(@category), alert: "Startup not found." if @startup.nil?
         end
     else  
         @startup = Startup.find_by(id: params[:id])
@@ -78,6 +75,6 @@ end
 
 private 
 def startup_params
-    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id, :category => [])
+    params.require(:startup).permit(:company, :innovation, :product, :location, categories_attributes: [:name, :category_id])
 end
 end

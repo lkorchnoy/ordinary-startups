@@ -1,5 +1,11 @@
 <h1>Innovative Startups</h1>
 
+<%= form_tag categories_path, :method => "get" do %>
+<%= label_tag(:search, "Search Startups by Category:") %>
+<%= text_field_tag :search %>
+<%= submit_tag("Search") %>
+<% end %>
+
 <% @categories.each do |category| %>
 <li><%= link_to category.name, category %></li>
 <ul>
@@ -11,8 +17,3 @@
 
 <% end %>
 
-<%= form_tag categories_path, :method => "get" do %>
-<%= label_tag(:search, "Search Startups by Category:") %>
-<%= text_field_tag :search %>
-<%= submit_tag("Search") %>
-<% end %>

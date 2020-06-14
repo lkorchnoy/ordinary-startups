@@ -1,10 +1,9 @@
-<h3><%= @user.name %></h3>
-<ul>
-<% @user.startups.each do |startup| %>
-<li><%= link_to user.startup.company, startup_path(startup) %></li>
-<%#=startup.id%><%#= startup.company %>>
+<h3><%= @current_user.name %></h3>
+<p>Your Startups: </p>
+<% @current_user.startups.each do |startup| %>
+<div><%= link_to startup.company, startup_path(startup) %></div>
 <% end %>
-</ul>
+
 
 <% if current_user %>
 <%= link_to "delete account", @user, method: :delete %>

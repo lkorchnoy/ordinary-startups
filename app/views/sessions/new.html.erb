@@ -1,12 +1,12 @@
 <h1>Login</h1>
-<%#= form_tag sessions_path do %>
+
 <%= render 'form' %>
+
+<%= link_to "Log In with Facebook", '/auth/facebook' %>
+<%= link_to "Log In with GitHub", '/auth/github' %>
 
 <% if @user && @user.errors.any? %>
     <% @user.errors.full_messages.each do |m| %>
         <p style="color: red;"><%= m %></p>
     <% end %>
 <% end %>
-
-<%= link_to "Log In with Facebook", '/auth/facebook' %>
-<%= link_to "Log In with GitHub", '/auth/github' %>

@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
  gem 'omniauth-github'
  gem 'dotenv-rails'
  
+ 
+ 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

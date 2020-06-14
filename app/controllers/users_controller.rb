@@ -14,8 +14,22 @@ def new
 end
 
 def show 
-    @user = User.find_by(id: params[:id])
+    if params[:user_id]
+        
+        @user = User.find_by(id: params[:id])
+        
+        if @startup.nil?  
+            redirect_to new_user_startup_path
+        else 
+            @startup = @user.startups.find_by(id: params[:id])
+        redirect_to user_startups_path(@user)
+       #@current_user.startups = User.find_by(id: params[:id]).current_user.startups 
+        end
+    else    
+    @startup = Startup.find_by(id: params[:id])
+    end
 end
+
 
 def create 
     @user = User.new(user_params)
@@ -37,7 +51,7 @@ end
 
 private
 def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :startup_id)
 end
 
 

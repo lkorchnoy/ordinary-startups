@@ -7,14 +7,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag 'application'%>
+    <%#= image_tag 'img_1.jpg'%>
+    
+  
 
-  <body>
+<div class="wrapper">
+<ul class="nav navbar-nav">
+<form class="form-inline">
   
-  <div class="wrapper">
-  
-  <% if current_user %>
-  <ul class="nav navbar-nav">
   <li class="active"><a href="/">Home</a></li>
   <li><%= link_to "Sign Up", controller: "users", action: "new" %></li>
   <li><%= link_to "Startups", startups_path %></li>
@@ -22,12 +23,18 @@
   <li><%= link_to "Startups by Categories", categories_path %></li>
   <li><%= link_to "Create a New Category", new_category_path %></li>
   <li><%= link_to "Log Out", logout_path, method: :post %>
-  <% end %>
+  
+  </form>
     </ul>
     
-   
-   
-     </div>
+   </div>
+   </head>
+
+  <body>
     <%= yield %>
+
+    
+    
   </body>
+
 </html>
