@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
         if current_user  
             @category = Category.find_by(id: params[:id])
             else  
-                redirect_to root_path 
+                redirect_to category_startup_path(@category)
         end
     end
 

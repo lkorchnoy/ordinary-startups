@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:index, :new, :show, :create, :home]
+  resources :categories, only: [:index, :new, :show, :create, :home, :update]
   resources :users, only: [:index, :new, :show, :create, :destroy, :home]
-  resources :startups 
+  resources :startups
   resources :categories do 
     resources :startups 
   end
-  resources :users do
-    resources :startups
-  end
+  
 
   root 'users#home'
   

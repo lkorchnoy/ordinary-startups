@@ -76,6 +76,6 @@ end
 
 private 
 def startup_params
-    params.require(:startup).permit(:company, :innovation, :product, :location, categories_attributes: [:name, :category_id])
+    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id)
 end
 end

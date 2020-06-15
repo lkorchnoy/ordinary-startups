@@ -8,26 +8,47 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application'%>
-    <%#= image_tag 'img_1.jpg'%>
+    <%#= image_tag 'img_2.jpg'%>
     
-  
+    
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+            <%= link_to "Sign Up", controller: "users", action: "new" %>
+          </a>
+          <a class="button is-light">
+            Log in
+            <%= link_to "Log In", controller: "sessions", action: "new" %>
+          </a>
+          <a class="button is-light">
+            Log in with Facebook
+            <%= link_to "Log In with Facebook", '/auth/facebook'%>
+          </a>
+          <a class="button is-light">
+            Log in with Github
+            <%= link_to "Log In with GitHub", '/auth/github'%>
+          </a>
+          <a class="button is-light">
+            Log Out 
+            <%= link_to "Log Out", logout_path, method: :post %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<div class="wrapper">
-<ul class="nav navbar-nav">
-<form class="form-inline">
-  
+  <%#= link_to "Sign Up", controller: "users", action: "new" %>
   <li class="active"><a href="/">Home</a></li>
-  <li><%= link_to "Sign Up", controller: "users", action: "new" %></li>
   <li><%= link_to "Startups", startups_path %></li>
   <li><%= link_to "New Startups", new_startup_path %></li>
   <li><%= link_to "Startups by Categories", categories_path %></li>
   <li><%= link_to "Create a New Category", new_category_path %></li>
-  <li><%= link_to "Log Out", logout_path, method: :post %>
+  <%#= link_to "Log Out", logout_path, method: :post %>
   
-  </form>
-    </ul>
-    
-   </div>
+  
    </head>
 
   <body>

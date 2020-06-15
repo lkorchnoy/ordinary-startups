@@ -2,8 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to "Log In with Facebook", '/auth/facebook' %>
-<%= link_to "Log In with GitHub", '/auth/github' %>
+<%#= link_to "Log In with Facebook", '/auth/facebook' %>
+<%#= link_to "Log In with GitHub", '/auth/github' %>
 
 <% if @user && @user.errors.any? %>
     <% @user.errors.full_messages.each do |m| %>

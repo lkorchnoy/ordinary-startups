@@ -5,8 +5,6 @@ class Startup < ApplicationRecord
     validates :innovation, presence: true 
     validates :product, inclusion: { in:[true,false]}
     
-    
-
     #accepts_nested_attributes_for :categories
 
     #def startup_attributes=(startup)
