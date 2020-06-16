@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :categories do 
     resources :startups 
   end
-  
+  resources :users do 
+    resources :startups
+  end 
 
   root 'users#home'
   

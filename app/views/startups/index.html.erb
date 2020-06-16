@@ -1,7 +1,7 @@
 <h1>Innovative Startups</h1>
-
+<% if current_user %>
 <% @startups.each do |startup| %>
-<li><%= link_to startup.company, startup %></li>
+<li><%= link_to startup.company, category_startup_path(startup.category, startup) %></li>
 <% end %>
 
-
+<% end %>

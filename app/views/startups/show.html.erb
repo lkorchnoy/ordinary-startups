@@ -1,5 +1,6 @@
 <h1><%= @startup.company %></h1>
-<p>in <%= link_to @startup.category.name, category_path(@startup.category) if @startup.category %> (<%= link_to "Edit Startup", edit_category_startup_path(@startup.category, @startup) if @startup.category %>)</p>
+<p>in <%= link_to @startup.category.name, category_path(@startup.category)%></p> 
+<p><%= link_to "Edit Startup", edit_category_startup_path(@startup.category, @startup) if @startup.category %></p>
 <p><%= @startup.innovation %></p>
 <p><%= @startup.product %></p>
 <p><%= @startup.location %></p>

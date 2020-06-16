@@ -4,5 +4,5 @@
 
 <p>Startups:</p>
 <% @category.startups.each do |startup| %>
-<div><%= link_to startup.company, startup_path(startup) %></div>
+<div><%= link_to startup.company, category_startup_path(startup.category, startup) %></div>
 <% end %>

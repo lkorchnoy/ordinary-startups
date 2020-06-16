@@ -2,7 +2,7 @@ class StartupsController < ApplicationController
   
 def new
     if params[:category_id] && !Category.exists?(params[:category_id])
-        redirect_to categories_path, alert: "Category not found."
+        redirect_to categories_path
     else 
     @startup = Startup.new(category_id: params[:category_id])
     end  
@@ -36,6 +36,7 @@ end
 
 def create
     @startup = Startup.new(startup_params)
+    @startup.user = current_user
     if @startup.save
     redirect_to @startup
 else   
@@ -59,9 +60,9 @@ end
 
 def update 
     @startup = Startup.find_by(id: params[:id])
-    @startup.update(startup_params)
-    if @startup.save 
-        redirect_to @startup  
+    @startup.user = current_user 
+    if @startup.update(startup_params)
+        redirect_to category_startup_path(@startup.category, @startup)  
     else
         render :edit
     end
@@ -76,6 +77,6 @@ end
 
 private 
 def startup_params
-    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id)
+    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id, :category => [])
 end
 end

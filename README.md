@@ -19,7 +19,7 @@ https://github.com/lkorchnoy/ordinary-startups.git
 
 License
 
-The repository is available as open source under the terms of the MIT License(https://opensource.org/licenses/MIT)
+The repository is available as open source under the terms of the MIT License (https://github.com/lkorchnoy/ordinary-startups/blob/master/LICENSE)
 
 Code of Conduct
 
