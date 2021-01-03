@@ -1,8 +1,8 @@
 class StartupsController < ApplicationController
-  
+    before_action :require_login
 def new
     if params[:category_id] && !Category.exists?(params[:category_id])
-        redirect_to categories_path
+        redirect_to new_category_startup_path        #redirect_to categories_path
     else 
     @startup = Startup.new(category_id: params[:category_id])
     end  
@@ -12,7 +12,7 @@ def index
     if params[:category_id]
         @category = Category.find_by(id: params[:category_id])
         if @category.nil?
-            redirect_to categories_path, alert: "Category not found"
+            redirect_to category_startups_path, alert: "Category not found"
         else
         @startups = @category.startups 
         end 

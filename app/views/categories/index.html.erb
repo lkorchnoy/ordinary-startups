@@ -1,5 +1,5 @@
 <h1>Innovative Startups</h1>
-
+<%#=link_to "Enter Your Startup", new_category_startup_path(@category) %>
 <%= form_tag categories_path, :method => "get" do %>
 <%= label_tag(:search, "Search Startups by Category:") %>
 <%= text_field_tag :search %>
@@ -7,7 +7,9 @@
 <% end %>
 
 <% @categories.each do |category| %>
-<li><%= link_to category.name, category_path(category) %></li>
+<li><%= link_to category.name, category_startups_path(category) %></li>
+
+
 <ul>
 <% category.startups.each do |startup| %>
 <li><%= startup.company %>, <%= startup.innovation %>, <%= startup.product %>, <%= startup.location %></li>

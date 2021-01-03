@@ -14,24 +14,24 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+          <span class="button is-primary">
+            
             <%= link_to "Sign Up", controller: "users", action: "new" %>
-          </a>
+          </span>
           <a class="button is-light">
-            Log in
+            
             <%= link_to "Log In", controller: "sessions", action: "new" %>
           </a>
           <a class="button is-light">
-            Log in with Facebook
+            
             <%= link_to "Log In with Facebook", '/auth/facebook'%>
           </a>
           <a class="button is-light">
-            Log in with Github
+            
             <%= link_to "Log In with GitHub", '/auth/github'%>
           </a>
           <a class="button is-light">
-            Log Out 
+            
             <%= link_to "Log Out", logout_path, method: :post %>
           </a>
         </div>

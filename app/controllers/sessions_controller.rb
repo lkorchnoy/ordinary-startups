@@ -1,32 +1,14 @@
 class SessionsController < ApplicationController
+    before_action :u_info, only:[:fb_create, :github_create]
     def new
     end
 
      def fb_create 
-        @user = User.find_or_create_by(uid: auth['info']['uid']) do |u|
-            u.uid = auth['info']['uid']
-            u.name = auth['info']['name']
-            u.email = auth['info']['email']
-            u.password = auth['info']['password']
-            
-        end
-        @user.save 
-            session[:user_id] = @user.id 
-            redirect_to user_path(@user)
+        redirect_to user_path(@user)
         end
 
      def github_create 
-        @user = User.find_or_create_by(uid: auth['info']['uid']) do |u|
-            
-            u.uid = auth['info']['uid']
-            u.name = auth['info']['name']
-            u.email = auth['info']['email']
-            u.password = auth['info']['password']
-            
-        end
-        @user.save 
-            session[:user_id] = @user.id 
-            redirect_to startups_path #user_path(@user)
+        redirect_to startups_path 
     end
 
 

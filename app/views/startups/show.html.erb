@@ -4,8 +4,9 @@
 <p><%= @startup.innovation %></p>
 <p><%= @startup.product %></p>
 <p><%= @startup.location %></p>
+<p><%#= @startup.user %></p>
 
 
-<% if current_user %>
+
 <%= link_to "delete startup", @startup, method: :delete %>
-<% end %>
+

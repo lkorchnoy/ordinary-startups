@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
+    before_action :require_login
     def index
-        if current_user && params[:search]
+        if params[:search]
             @categories = Category.search(params[:search])
 
         elsif session[:user_id]
@@ -16,10 +17,10 @@ class CategoriesController < ApplicationController
     end
     
     def show
-        if current_user  
-            @category = Category.find_by(id: params[:id])
-            else  
-                redirect_to category_startup_path(@category)
+        @category = Category.find_by(id: params[:id])
+        
+        if !@category  
+                redirect_to category_path
         end
     end
 

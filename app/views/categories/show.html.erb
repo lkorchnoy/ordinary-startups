@@ -1,6 +1,8 @@
 <h1><%= @category.name %></h1>
-
 <%=link_to "Enter Your Startup", new_category_startup_path(@category) %>
+
+
+<%#= link_to category.name, category_startups_path(category) %>
 
 <p>Startups:</p>
 <% @category.startups.each do |startup| %>
