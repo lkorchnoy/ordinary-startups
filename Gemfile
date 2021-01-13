@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
  gem 'dotenv-rails'
  gem 'carrierwave'
  gem 'aws-sdk', '~> 2'
+ gem 'fog-aws'
  
  
  
