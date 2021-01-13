@@ -85,6 +85,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+<<<<<<< HEAD
     carrierwave (2.1.0)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -92,6 +93,8 @@ GEM
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
+=======
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
@@ -136,8 +139,12 @@ GEM
     ipaddress (0.8.3)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+<<<<<<< HEAD
     jmespath (1.4.0)
     jwt (2.2.2)
+=======
+    jwt (2.2.1)
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -150,6 +157,7 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
+<<<<<<< HEAD
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
@@ -158,6 +166,12 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
+=======
+    mimemagic (0.3.4)
+    mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
+    minitest (5.14.0)
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
     msgpack (1.3.3)
     msgpack (1.3.3-java)
     msgpack (1.3.3-x64-mingw32)
@@ -165,6 +179,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+<<<<<<< HEAD
     nio4r (2.5.4)
     nio4r (2.5.4-java)
     nokogiri (1.10.10)
@@ -174,6 +189,19 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.10-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+=======
+    nio4r (2.5.2)
+    nio4r (2.5.2-java)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.1-java)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86-mingw32)
+      racc (~> 1.4)
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -199,6 +227,11 @@ GEM
       nio4r (~> 2.0)
     puma (4.3.6-java)
       nio4r (~> 2.0)
+<<<<<<< HEAD
+=======
+    racc (1.5.2)
+    racc (1.5.2-java)
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -317,7 +350,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+<<<<<<< HEAD
   carrierwave
+=======
+>>>>>>> fcbc50a659dd01dca988e1518651630ff421de6a
   dotenv-rails
   fog-aws
   jbuilder (~> 2.7)
