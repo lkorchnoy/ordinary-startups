@@ -9,7 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'rails_12factor'
-gem 'web-console', '>= 3.3.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
@@ -48,7 +48,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'pg'
+  
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
