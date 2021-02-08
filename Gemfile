@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
  gem 'omniauth-facebook'
  gem 'omniauth-github'
  gem 'dotenv-rails'
- gem 'carrierwave', '~> 1.0'
+ gem 'carrierwave', '~> 1.3'
  gem 'aws-sdk', '~> 2'
  gem 'fog-aws'
  
