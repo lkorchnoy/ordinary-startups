@@ -2,12 +2,6 @@ class UsersController < ApplicationController
 before_action :require_login, except: [:new, :create, :home]
 
    
-def index
-    @users = User.all 
-end
-
-def home 
-end
 
 def new
     @user = User.new 
