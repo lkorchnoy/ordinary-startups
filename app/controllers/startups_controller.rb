@@ -68,11 +68,7 @@ def update
     end
 end
 
-def destroy 
-    @startup = Startup.find_by(id: params[:id])
-    @startup.destroy 
-    redirect_to startups_path 
-end 
+
 
 
 private 
