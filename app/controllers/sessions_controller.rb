@@ -12,16 +12,7 @@ class SessionsController < ApplicationController
     end
 
 
-     def create
-        @user = User.find_or_create_by(email: params[:sessions][:email])
-            
-        if @user && @user.authenticate(params[:sessions][:password])
-            session[:user_id] = @user.id 
-            redirect_to startups_path 
-            else 
-                render :new
-            end
-     end
+     
 
     def destroy
             session.delete :user_id 
