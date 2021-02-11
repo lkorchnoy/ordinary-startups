@@ -68,11 +68,10 @@ def update
     end
 end
 
+def destroy 
+    @startup = Startup.find_by(id: params[:id])
+    @startup.destroy 
+    redirect_to startups_path 
+end 
 
 
-
-private 
-def startup_params
-    params.require(:startup).permit(:company, :innovation, :product, :location, :category_id, :category => [])
-end
-end
