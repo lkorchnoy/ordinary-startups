@@ -7,7 +7,7 @@ ruby '2.5.5'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use pg as the database for Active Record
 
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'sqlite3', '~> 1.4'
 gem 'rails_12factor'
 
 # Use Puma as the app server
@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 2.7'
  gem 'omniauth-facebook'
  gem 'omniauth-github'
  gem 'dotenv-rails'
- gem 'carrierwave', '~> 1.0'
- gem 'aws-sdk', '~> 2'
- gem 'fog-aws'
+ 
+ 
+ 
  
  
  

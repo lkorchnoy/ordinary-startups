@@ -1,7 +1,12 @@
-<h1>Innovative Startups</h1>
-<% if current_user %>
-<% @startups.each do |startup| %>
-<li><%= link_to startup.company, category_startup_path(startup.category, startup) %></li>
-<% end %>
 
+
+<h1>Innovative Startups</h1>
+
+<% @startups.each do |startup| %>
+<li><%= link_to startup.company, startup %></li>
+<ul>
+<% @startups.each do |startup| %>
+<li><%= startup.company %>, <%= startup.innovation %>, <%= startup.product %>, <%= startup.location %></li>
+<% end %>
+</ul>
 <% end %>

@@ -1,6 +1,5 @@
 <%= render 'form' %>
 
-
 <% if @startup && @startup.errors.any? %>
 <ul>
 <% @startup.errors.full_messages.each do |m| %>
@@ -8,4 +7,5 @@
 <% end %>
 </ul>
 <% end %>
+
 

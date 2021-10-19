@@ -1,12 +1,11 @@
 <h1>Enter Your Startup</h1>
 
 <%= form_for @startup do |f| %>
-<%= category_id_field(@startup) %>
+<%= category_id_field(@startup)%>
 <br>
 
 <%= f.label :company %>
 <%= f.text_field :company %>
-
 <%= f.label :innovation %>
 <%= f.text_field :innovation %>
 <%= f.label :product %>
@@ -17,5 +16,6 @@
 <%= f.hidden_field :user_id %>
 
 <br />
+
 <%= f.submit 'Submit'%>
 <% end %>
